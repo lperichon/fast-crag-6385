@@ -127,139 +127,233 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <header class="clearfix">
-      <% if @user %>
-          <p id="picture" style="background-image: url(https://graph.facebook.com/<%= @user['id'] %>/picture?type=normal)"></p>
-          <div>
-            <h1>Welcome, <strong><%= @user['name'] %></strong></h1>
-            <p class="tagline">
-              This is your app
-              <a href="<%= @app['@app'] %>"><%= @app['name'] %></a>
-            </p>
-            <div id="share-app">
-              <p>Share your app:</p>
-              <ul>
-                <li>
-                  <a href="#" class="facebook-button" id="postToWall" data-url="<%= url %>">
-                    <span class="plus">Post to Wall</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="facebook-button speech-bubble" id="sendToFriends" data-url="<%= url %>">
-                    <span class="speech-bubble">Send Message</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
-                    <span class="apprequests">Send Requests</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-      <% else %>
-        <div>
-          <h1>Welcome</h1>
-            <a href='/auth/facebook' class="fb_button fb_button_medium">
-              <span class="fb_button_text">Log In</span>
-            </a>
-        </div>
-
-      <% end %>
-    </header>
-
-    <section id="get-started">
-      <p>Welcome to your Facebook app, running on <span>heroku</span>!</p>
-      <a href="https://devcenter.heroku.com/articles/facebook?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="button">Learn How to Edit This App</a>
-    </section>
-
-
-    <% if @user %>
-    <section id="samples" class="clearfix">
-          <h1>Examples of the Facebook Graph API</h1>
-
-          <div class="list">
-            <h3>A few of your friends</h3>
-            <ul class="friends">
-              <% @friends.each do |friend| %>
-                <li>
-                  <a href="#" onclick="window.open('http://www.facebook.com/<%= friend['id']%>')">
-                    <img src="https://graph.facebook.com/<%= friend['id'] %>/picture?type=square" alt="<%= friend['name'] %>">
-                    <%= friend['name'] %>
-                  </a>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-
-          <div class="list inline">
-            <h3>Recent photos</h3>
-            <ul class="photos">
-              <% @photos.each_with_index do |photo, index| %>
-                <li style="background-image: url(<%= photo['picture'] %>)" class='<%= 'first-column' if (index%4).zero? %>'>
-                  <a href="#" onclick="window.open('http://www.facebook.com/<%= photo['id'] %>')">
-                    <%= photo['name'] %>
-                  </a>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-
-          <div class="list">
-            <h3>Things you like</h3>
-            <ul class="things">
-              <% @likes.each do |like| %>
-                <li>
-                  <a href="#" onclick="window.open('http://www.facebook.com/<%= like['id'] %>')">
-                    <img src="https://graph.facebook.com/<%= like['id'] %>/picture?type=square" alt="<%= like['name'] %>">
-                    <%= like['name'] %>
-                  </a>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-
-          <div class="list">
-            <h3>Friends using this app</h3>
-            <ul class="friends">
-              <% @friends_using_app.each do |friend_result| %>
-                <li>
-                  <a href="#" onclick="window.open('http://www.facebook.com/<%= friend_result['uid'] %>')">
-                    <img src="<%= friend_result['pic_square'] %>" alt="<%= friend_result['name'] %>">
-                    <%= friend_result['name'] %>
-                  </a>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-        </section>
-    <% end %>
-
-
-    <section id="guides" class="clearfix">
-      <h1>Learn More About Heroku &amp; Facebook Apps</h1>
+    <section id="escuelas" class="clearfix">
+      <h1>Conocé nuestras escuelas</h1>
       <ul>
         <li>
-          <a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon heroku">Heroku</a>
-          <p>Learn more about <a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top">Heroku</a>, or read developer docs in the Heroku <a href="https://devcenter.heroku.com/" target="_top">Dev Center</a>.</p>
+
+          <div class="school">
+            <div class="school_left">
+              <img class="school_image" src="../images/decana.jpg"/>
+
+            </div>
+            <div class="school_right">
+              <h2><a target="_blank" href="http://www.MetodoDeRoseDecana.com.ar">Sede Decana</a></h2>
+              <p>Av. Corrientes 2940 3º 7 <a target="_blank" class="ir maps" href="https://maps.google.com.ar/maps/ms?msa=0&amp;msid=217128129344971624699.00048f22727b32639ec2d&amp;ie=UTF8&amp;t=p&amp;ll=-34.60453,-58.409801&amp;spn=0.012363,0.018239&amp;z=15&amp;output=embed" marginwidth="0" marginheight="0">maps</a></p>
+              <p>4864-7090</p>
+
+              <div>
+                <a target="_blank" href="https://www.facebook.com/derosedecana" class="ir social facebook">Facebook</a>
+                <a target="_blank" href="http://twitter.com/sededecana" class="ir social twitter">Twitter</a>
+                <a target="_blank" href="https://es.foursquare.com/sededecana" class="ir social foursquare">Foursquare</a>
+
+              </div>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="https://developers.facebook.com/docs/guides/web/" target="_top" class="icon websites">Websites</a>
-          <p>
-            Drive growth and engagement on your site with
-            Facebook Login and Social Plugins.
-          </p>
+
+          <div class="school">
+            <div class="school_left">
+              <img class="school_image" src="../images/belgrano.jpg"/>
+
+            </div>
+            <div class="school_right">
+              <h2><a target="_blank" href="http://www.derosebelgrano.com.ar">Sede Belgrano</a></h2>
+              <p>Av. Luis M. Campos 1395 <a target="_blank" class="ir maps" href="https://maps.google.com.ar/maps/ms?msa=0&amp;msid=217128129344971624699.00048f22727b32639ec2d&amp;ie=UTF8&amp;t=p&amp;ll=-34.562909,-58.443789&amp;spn=0.012369,0.018239&amp;z=15&amp;output=embed">maps</a></p>
+              <p>4785-4882</p>
+
+              <div>
+                <a target="_blank" href="https://www.facebook.com/derosebelgrano" class="ir social facebook">Facebook</a>
+                <a target="_blank" href="http://www.twitter.com/DeROSE_Belgrano" class="ir social twitter">Twitter</a>
+                <a target="_blank" href="https://foursquare.com/v/m%C3%A9todo-derose--belgrano/4b55225ff964a52063dc27e3" class="ir social foursquare">Foursquare</a>
+
+              </div>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="https://developers.facebook.com/docs/guides/mobile/" target="_top" class="icon mobile-apps">Mobile Apps</a>
-          <p>
-            Integrate with our core experience by building apps
-            that operate within Facebook.
-          </p>
+
+          <div class="school">
+            <div class="school_left">
+              <img class="school_image" src="../images/callao.jpg"/>
+            </div>
+            <div class="school_right">
+              <h2><a target="_blank" href="http://www.derosecallao.com">Sede Callao</a></h2>
+              <p>Av. Callao 733 <a target="_blank" class="ir maps" href="https://maps.google.com.ar/maps/ms?msa=0&amp;msid=217128129344971624699.00048f22727b32639ec2d&amp;ie=UTF8&amp;t=p&amp;ll=-34.599868,-58.395038&amp;spn=0.012364,0.018239&amp;z=15&amp;output=embed">maps</a></p>
+              <p>4816-5777</p>
+
+              <div>
+                <a target="_blank" href="https://www.facebook.com/callao.metododerose" class="ir social facebook">Facebook</a>
+                <a target="_blank" href="https://twitter.com/DeRoseCallao" class="ir social twitter">Twitter</a>
+
+              </div>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="https://developers.facebook.com/docs/guides/canvas/" target="_top" class="icon apps-on-facebook">Apps on Facebook</a>
-          <p>Let users find and connect to their friends in mobile apps and games.</p>
+
+          <div class="school">
+            <div class="school_left">
+              <img class="school_image" src="../images/cervino.jpg"/>
+
+            </div>
+            <div class="school_right">
+              <h2><a target="_blank" href="www.derosecervino.com.ar">Sede Cerviño</a></h2>
+              <p>República Árabe Siria 3088 <a target="_blank" class="ir maps" href="https://maps.google.com.ar/maps/ms?msa=0&amp;msid=217128129344971624699.00048f22727b32639ec2d&amp;ie=UTF8&amp;t=p&amp;ll=-34.577822,-58.417225&amp;spn=0.012367,0.018239&amp;z=15&amp;output=embed">maps</a></p>
+              <p>4801-8522</p>
+
+              <div>
+                <a target="_blank" href="https://www.facebook.com/DeRoseCervino" class="ir social facebook">Facebook</a>
+                <a target="_blank" href="https://twitter.com/DeRoseCervino" class="ir social twitter">Twitter</a>
+                <a target="_blank" href="https://foursquare.com/v/m%C3%A9todo-derose--cervi%C3%B1o/50663727f2e79e2d2e0002a7" class="ir social foursquare">Foursquare</a>
+
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+
+          <div class="school">
+            <div class="school_left">
+              <img class="school_image" src="../images/palermo.jpg"/>
+
+            </div>
+            <div class="school_right">
+              <h2><a target="_blank" href="http://www.DeRosePalermo.com">Sede Palermo</a></h2>
+              <p>F.J.S.M de Oro 1702 <a target="_blank" class="ir maps" href="https://maps.google.com.ar/maps/ms?msa=0&amp;msid=217128129344971624699.00048f22727b32639ec2d&amp;ie=UTF8&amp;t=p&amp;ll=-34.585206,-58.430958&amp;spn=0.012366,0.018239&amp;z=15&amp;output=embed">map</a></p>
+              <p>4778-3805</p>
+
+              <div>
+                <a target="_blank" href="https://www.facebook.com/sedepalermo" class="ir social facebook">Facebook</a>
+                <a target="_blank" href="http://twitter.com/sedepalermo" class="ir social twitter">Twitter</a>
+                <a target="_blank" href="https://foursquare.com/v/m%C3%A9todo-derose-palermo/4d70f1b9812e2c0f7529f67a" class="ir social foursquare">Foursquare</a>
+
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+
+          <div class="school">
+            <div class="school_left">
+              <img class="school_image" src="../images/recoleta.jpg"/>
+
+            </div>
+            <div class="school_right">
+              <h2><a target="_blank" href="http://www.MetodoDeRoseBuenosAires.com">Sede Recoleta</a></h2>
+              <p>Vicente López 1661, local 14 <a target="_blank" class="ir maps" href="https://maps.google.com.ar/maps/ms?msa=0&amp;msid=217128129344971624699.00048f22727b32639ec2d&amp;ie=UTF8&amp;t=p&amp;ll=-34.590541,-58.389802&amp;spn=0.012365,0.018239&amp;z=15&amp;output=embed">mapa</a></p>
+              <p>4812-7805</p>
+
+              <div>
+                <a target="_blank" href="https://www.facebook.com/sederecoleta" class="ir social facebook">Facebook</a>
+                <a target="_blank" href="https://twitter.com/DeRose_Recoleta" class="ir social twitter">Twitter</a>
+                <a target="_blank" href="https://foursquare.com/v/sede-recoleta-metodo-de-rose/4c993d65a004a1cd92133e6e" class="ir social foursquare">Foursquare</a>
+
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+
+          <div class="school">
+            <div class="school_left">
+              <img class="school_image" src="../images/nunez.jpg"/>
+
+            </div>
+            <div class="school_right">
+              <h2><a target="_blank" href="http://www.DeRosenunez.com.ar">Sede Nuñez</a></h2>
+              <p>Crisólogo Larralde 1721 <a target="_blank" class="ir maps" href="https://maps.google.com.ar/maps/ms?msa=0&amp;msid=217128129344971624699.00048f22727b32639ec2d&amp;ie=UTF8&amp;t=p&amp;ll=-34.545378,-58.462329&amp;spn=0.012372,0.018239&amp;z=15&amp;output=embed" marginwidth="0" marginheight="0">mapa</a></p>
+              <p>4703-3215</p>
+
+              <div>
+                <a target="_blank" href="https://www.facebook.com/metododerose.nunez" class="ir social facebook">Facebook</a>
+                <a target="_blank" href="https://foursquare.com/v/m%C3%A9todo-derose-n%C3%BA%C3%B1ez/4cdc45ef39172d43b59f83d8" class="ir social foursquare">Foursquare</a>
+
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+
+          <div class="school">
+            <div class="school_left">
+              <img class="school_image" src="../images/sanisidro.jpg"/>
+
+            </div>
+            <div class="school_right">
+              <h2><a target="_blank" href="http://derosesanisidro.com.ar/">Sede San Isidro</a></h2>
+              <p>Av. Fondo de la Legua 177 <a target="_blank" class="ir maps" href="https://maps.google.com.ar/maps/ms?msa=0&amp;msid=217128129344971624699.00048f22727b32639ec2d&amp;ie=UTF8&amp;t=p&amp;ll=-34.498917,-58.549662&amp;spn=0.012379,0.018239&amp;z=15&amp;output=embed" marginwidth="0" marginheight="0">mapa</a></p>
+              <p>4766-4291</p>
+
+              <div>
+                <a target="_blank" href="https://www.facebook.com/DeRosesanisidro" class="ir social facebook">Facebook</a>
+                <a target="_blank" href="https://foursquare.com/v/m%C3%A9todo-derose-san-isidro/4d1bed4b2fa36a31be86f73d" class="ir social foursquare">Foursquare</a>
+
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+
+          <div class="school">
+            <div class="school_left">
+              <img class="school_image" src="../images/martinez.jpg"/>
+
+            </div>
+            <div class="school_right">
+              <h2><a target="_blank" href=" http://yogaenmartinez.com.ar/">Sede Martinez</a></h2>
+              <p>Arenales 1983 <a target="_blank" class="ir maps" href="https://maps.google.com.ar/maps/ms?msa=0&amp;msid=208976377062283499566.0004d2b41e02b39b84297&amp;ie=UTF8&amp;ll=-34.485936,-58.504686&amp;spn=0,0&amp;t=p&amp;output=embed">maps</a></p>
+              <p>4733-3801</p>
+
+              <div>
+                <a target="_blank" href="https://www.facebook.com/SwaSthyaEnMartinez" class="ir social facebook">Facebook</a>
+                <a target="_blank" href="http://twitter.com/SwaSthyaMTZ" class="ir social twitter">Twitter</a>
+                <a target="_blank" href="https://es.foursquare.com/v/sw%C3%A1sthya-en-martinez/4d6e532dcf4da0904693e3d6" class="ir social foursquare">Foursquare</a>
+
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+
+          <div class="school">
+            <div class="school_left">
+              <img class="school_image" src="../images/cordoba.jpg"/>
+
+            </div>
+            <div class="school_right">
+              <h2>Sede Cordoba</h2>
+              <p>Buenos Aires 764 <a target="_blank" class="ir maps" href="https://maps.google.com.ar/maps/ms?msa=0&amp;msid=217128129344971624699.00048f22727b32639ec2d&amp;ie=UTF8&amp;t=p&amp;ll=-31.424672,-64.188523&amp;spn=0.012817,0.018239&amp;z=15&amp;output=embed">maps</a></p>
+              <p>(0351) 422-2781</p>
+
+              <div>
+                <a target="_blank" href="https://www.facebook.com/Metodo.DeRose.Cordoba" class="ir social facebook">Facebook</a>
+                <a target="_blank" href="http://twitter.com/MetodoDeRoseCBA" class="ir social twitter">Twitter</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+
+          <div class="school">
+            <div class="school_left">
+              <img class="school_image" src="../images/mendoza.jpg"/>
+
+            </div>
+            <div class="school_right">
+              <h2><a target="_blank" href=" http://www.derosemendoza.com.ar">Sede Mendoza</a></h2>
+              <p>Paso de los Andes 1047 <a target="_blank" class="ir maps" href="https://maps.google.com.ar/maps/ms?msa=0&amp;msid=217128129344971624699.00048f22727b32639ec2d&amp;ie=UTF8&amp;t=p&amp;ll=-32.889101,-68.859386&amp;spn=0.025226,0.036478&amp;z=14&amp;output=embed">maps</a></p>
+              <p>(0261) 425-7372</p>
+
+              <div>
+                <a target="_blank" href="https://www.facebook.com/DeRoseMendoza" class="ir social facebook">Facebook</a>
+                <a target="_blank" href="http://twitter.com/DeRoseMendoza" class="ir social twitter">Twitter</a>
+                <a target="_blank" href="https://foursquare.com/v/m%C3%A9todo-derose-mendoza/4f6e52d3754a51dc64828d30" class="ir social foursquare">Foursquare</a>
+
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </section>

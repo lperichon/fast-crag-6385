@@ -1,5 +1,4 @@
 require "sinatra"
-require 'koala'
 
 enable :sessions
 set :raise_errors, false

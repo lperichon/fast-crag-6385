@@ -11,6 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   width: 720px;
   margin: 20px;
+  background:  url("../images/bg_tecido_alaranjado.jpg");
 }
 
 a:link, a:visited {
@@ -180,165 +181,77 @@ header .tagline {
   font-family: "HybreaRegular";
   font-size: 22px;
 }
+
 /* ------------------------------------------ */
 
-/* =guides/samples spacing
+/* Escuelas
 --------------------------------------------- */
-#guides h1,
-#samples h1 {
-  margin-bottom: 15px;
-  text-align: center;
+h1 {
+    font-size: 2em;
+    line-height: 2em;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-#guides, #samples {
-  padding: 20px 5px 20px 10px;
+.school_left {
+  width:450px;
+  display:inline-block;
+}
+.school_right {
+  display: inline-block;
+  width: 215px;
+  vertical-align: top;
+  margin-left:10px;
+}
+.school_image {
+    width: 450px;
 }
 
-#guides ul li,
-#samples .list {
-  float: left;
-  margin-right: 3px;
-  width: 172px;
+.school h2 {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-weight: bold;
 }
 
-#guides ul li p,
-#samples ul {
-  padding: 0 4px;
-}
-/* ------------------------------------------ */
-
-/* =guides
---------------------------------------------- */
-#guides {
-  border-bottom: 1px solid #b3b3b3;
-  border-left: 1px solid #b3b3b3;
-  border-right: 1px solid #b3b3b3;
+.school h2 a {
+    color: #999;
 }
 
-#guides ul li {
-  font-size: 11px;
-  list-style: none;
+.ir.maps {
+  background-image: url("../images/maps.png");
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-#guides ul li p {
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  line-height: 20px;
-  text-align: justify;
+.social {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
 }
 
-#guides ul li a.icon {
-  background: url("../images/sprites.png") no-repeat;
-  display: block;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  margin-bottom: 10px;
-  padding-top: 124px;
-  text-align: center;
+.facebook {
+    background-image: url("../images/facebook.png");
 }
 
-#guides ul li a.websites {
-  background-position: 35px -87px;
+.twitter {
+    background-image: url("../images/twitter.png");
 }
 
-#guides ul li a.mobile-apps {
-  background-position: 35px -231px;
+.foursquare {
+    background-image: url("../images/foursquare.png");
 }
 
-#guides ul li a.apps-on-facebook {
-  background-position: 35px -375px;
+.site {
+    background-image: url("../images/rss.png");
 }
 
-#guides ul li a.heroku {
-  background-position: 35px -519px;
+.ir {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
 }
-/* ------------------------------------------ */
-
-/* =samples
---------------------------------------------- */
-#samples {
-  background-image: url("../images/samples-bg.png");
-  border-bottom: 1px solid #dadada;
-  border-left: 1px solid #b3b3b3;
-  border-right: 1px solid #b3b3b3;
-  border-top: 1px solid #fff;
-}
-
-#samples h3 {
-  background: url("../images/header-sketch.png") no-repeat;
-  color: #646464;
-  font-weight: bold;
-  font-size: 11px;
-  line-height: 29px;
-  text-align: center;
-}
-
-#samples ul {
-  background: url("../images/picture-sketch.png") 4px 8px;
-  background-repeat: repeat-y;
-  height: 161px;
-  overflow: hidden;
-  padding-top: 8px;
-}
-
-#samples li {
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  color: #7c7c7c;
-  display: block;
-  font-size: 11px;
-  font-weight: bold;
-  height: 32px;
-  margin-bottom: 11px;
-  overflow: hidden;
-  position: relative;
-}
-
-#samples li a:link,
-#samples li a:visited {
-  color: #7c7c7c;
-  display: block;
-  line-height: 32px;
-  padding-left: 36px;
-}
-
-#samples .list img {
-  height: auto;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 32px;
-}
-
-#samples .inline ul {
-  background-repeat: repeat;
-}
-
-#samples .inline li {
-  float: left;
-  margin-left: 12px;
-  overflow: hidden;
-  padding: 0;
-  width: 32px;
-  background-position: center 25%;
-  background-repeat: no-repeat;
-  -moz-background-size: cover;
-  background-size: cover;
-}
-
-#samples .inline li.first-column {
-  margin-left: 0;
-}
-
-#samples .inline li a:link,
-#samples .inline li a:visited {
-  display: block;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  text-indent: -9999px;
-}
-
 
 /* ------------------------------------------ */
 
